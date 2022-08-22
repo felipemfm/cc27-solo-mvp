@@ -1,4 +1,6 @@
-export function userNameGenerator(): { name: string; token: string } {
+import { User } from "../globals";
+
+export function userNameGenerator(): User {
   const date = new Date();
   const animalAvatar = [
     "Cat",
