@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { User } from "./globals";
 import { userNameGenerator } from "./util/userNameGenerator";
 import "./App.css";
 
@@ -8,7 +7,10 @@ import MessageView from "./components/MessageView";
 import MessageInput from "./components/MessageInput";
 
 function App() {
-  const [userInfo, setUserInfo] = useState<User | null>(null);
+  const [userInfo, setUserInfo] = useState<{
+    name: string;
+    token: string;
+  } | null>(null);
 
   useEffect(() => {
     if (!userInfo) {
@@ -22,7 +24,7 @@ function App() {
     <div className="App">
       <Header user={userInfo} />
       <MessageView />
-      <MessageInput />
+      <MessageInput user={userInfo} />
     </div>
   );
 }

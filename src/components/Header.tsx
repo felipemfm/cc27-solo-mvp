@@ -1,8 +1,10 @@
-import { User } from "../globals";
 import "./Header.css";
 
 interface props {
-  user: User | null;
+  user: {
+    name: string;
+    token: string;
+  } | null;
 }
 
 const Header: React.FC<props> = (props) => {
