@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <Header user={userInfo} />
-      <MessageView />
+      <MessageView user={userInfo} />
       <MessageInput user={userInfo} />
     </div>
   );

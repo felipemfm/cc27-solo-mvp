@@ -1,5 +1,14 @@
-.View{
-    font-size: 3rem;
-    height: 80rem;
-    border-bottom: 3px solid #000;
+.View {
+  font-size: 2rem;
+  height: 80rem;
+  border-bottom: 3px solid #000;
+  overflow: scroll;
+  width: 100%;
+  display: inline-block;
+}
+.right {
+  text-align: end;
+}
+.left {
+  text-align: start;
 }
