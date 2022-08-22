@@ -18,8 +18,6 @@ function App() {
     }
   }, [userInfo]);
 
-  console.log(userInfo);
-
   return (
     <div className="App">
       <Header user={userInfo} />
