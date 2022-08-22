@@ -4,6 +4,8 @@ import { userNameGenerator } from "./util/userNameGenerator";
 import "./App.css";
 
 import Header from "./components/Header";
+import MessageView from "./components/MessageView";
+import MessageInput from "./components/MessageInput";
 
 function App() {
   const [userInfo, setUserInfo] = useState<User | null>(null);
@@ -19,6 +21,8 @@ function App() {
   return (
     <div className="App">
       <Header user={userInfo} />
+      <MessageView />
+      <MessageInput />
     </div>
   );
 }
