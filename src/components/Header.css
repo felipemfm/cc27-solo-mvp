@@ -1,0 +1,8 @@
+.Header {
+  display: block;
+  z-index: 200;
+  font-size: 3rem;
+  border-bottom: 3px solid #000;
+  display: flex;
+  justify-content: space-between;
+}
