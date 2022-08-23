@@ -10,7 +10,7 @@ interface props {
 const Header: React.FC<props> = (props) => {
   return (
     <div className="header">
-      <h1 className="title">Title</h1>
+      <h1 className="title">FireChat</h1>
       {props.user && (
         <div className="user_info">
           <p>{props.user.name}</p>

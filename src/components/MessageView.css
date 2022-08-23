@@ -1,5 +1,11 @@
 .view {
-  border-bottom: 3px solid #000;
+  border-bottom: 3px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    232deg,
+    rgba(231, 36, 9, 1) 0%,
+    rgba(235, 143, 6, 1) 48%
+  );
   overflow: auto;
   width: 100%;
   height: 75vh;
