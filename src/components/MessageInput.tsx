@@ -38,14 +38,18 @@ const MessageInput: React.FC<props> = (props) => {
   }, [readyMessage]);
 
   return (
-    <div className="Input">
-      <input
-        type="text"
+    <div className="input">
+      <textarea
         id="TextInput"
         value={message}
-        onChange={(e) => setMessage(e.target.value)}
+        className="text-area"
+        onChange={(e) => {
+          setMessage(e.target.value);
+        }}
       />
-      <button onClick={sendMessage}>Send</button>
+      <button className="button" onClick={sendMessage}>
+        Send
+      </button>
     </div>
   );
 };

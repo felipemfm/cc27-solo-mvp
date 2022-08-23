@@ -9,12 +9,13 @@ interface props {
 
 const Header: React.FC<props> = (props) => {
   return (
-    <div className="Header">
-      <h1>Title</h1>
+    <div className="header">
+      <h1 className="title">Title</h1>
       {props.user && (
-        <h3>
-          {props.user.name}#{props.user.token}
-        </h3>
+        <div className="user_info">
+          <p>{props.user.name}</p>
+          <span>#{props.user.token}</span>
+        </div>
       )}
     </div>
   );

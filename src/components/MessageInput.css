@@ -1,4 +1,15 @@
-.Input {
-    height: 10rem;
-    font-size: 3rem;
+.input {
+  padding: 0.5em;
+  display: flex;
+  height: 10%;
+}
+
+.text-area {
+  font-size: 2rem;
+  width: 80%;
+  resize: none;
+}
+
+.button {
+  width: 20%;
 }

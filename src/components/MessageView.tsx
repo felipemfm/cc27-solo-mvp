@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import moment from "moment";
 import "./MessageView.css";
 
 interface props {
@@ -23,13 +24,12 @@ const apiServer =
     : process.env.REACT_APP_DEPLOY_SERVER;
 
 const MessageView: React.FC<props> = (props) => {
-  const [messageList, setMessageList] = useState<{ data: message[] }>({
-    data: [],
-  });
+  const [messageList, setMessageList] = useState<message[]>([]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       getChatData();
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }, 1000);
     return () => clearTimeout(timer);
   });
@@ -37,25 +37,25 @@ const MessageView: React.FC<props> = (props) => {
   const getChatData = async () => {
     const data: { data: message[] } = await axios.get(apiServer!, {
       params: {
-        len: messageList.data.length,
+        len: messageList.length,
       },
     });
-    data.data && setMessageList(data);
+    const messageData = data.data;
+    messageData && setMessageList(messageData.reverse());
   };
   return (
-    <div className="View">
-      {messageList.data.length > 0 &&
-        messageList.data.map((element: message, i: number) => {
+    <div className="view">
+      {messageList.length > 0 &&
+        messageList.map((element: message, i: number) => {
           return (
-            <div
-              key={i}
-              className={element.token === props.user?.token ? "right" : "left"}
-            >
-              <p>{element.message}</p>
-              <p>
-                {element.user}#{element.token}
-              </p>
-              <p>{element.date}</p>
+            <div key={i} className="message">
+              <p className="message-text">{element.message}</p>
+              <div className="message-bottom">
+                <p>
+                  {element.user === props.user?.name ? "YOU" : element.user}
+                </p>
+                <p>{moment(element.date).fromNow()}</p>
+              </div>
             </div>
           );
         })}

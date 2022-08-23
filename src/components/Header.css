@@ -1,8 +1,23 @@
-.Header {
-  display: block;
-  z-index: 200;
-  font-size: 3rem;
-  border-bottom: 3px solid #000;
+.header {
   display: flex;
+  border-bottom: 3px solid #000;
   justify-content: space-between;
+}
+.title {
+  font-size: 5rem;
+}
+
+.user_info {
+  font-size: 2rem;
+  padding: 1.5rem;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.user_info p {
+  font-weight: 400;
+}
+
+.user_info span{
+  font-size: 1.5rem;
 }
