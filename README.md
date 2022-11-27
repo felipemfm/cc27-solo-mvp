@@ -2,7 +2,7 @@
 The backend for this project can be found [here](https://github.com/felipemfm/cc27-solo-mvp-server).
 ## About
 
-FireChat is a chat room application designed to offer anonymous confirmation between various users.
+FireChat is a chat room application designed to offer anonymous conversation between various users.
 
 The project was deployed through Heroku and can be seen at [FireChat](https://cc27-chat-room.herokuapp.com/).
 
